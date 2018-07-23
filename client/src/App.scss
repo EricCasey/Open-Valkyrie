@@ -1,0 +1,697 @@
+$border-color: lightgreen;
+$alt-border: #212121;
+$background-color: black;
+
+.App {
+  height: 100%;
+  width: 100%;
+  background: $background-color;
+  overflow: hidden;
+  .Head, .Left, .Right, .Foot, .Action {
+    border: 2px solid $border-color;
+    border-radius: 4px;
+    background: $background-color;
+    position: absolute;
+    color: $border-color;
+    transition: 0.7s all;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    h1, h2 {
+      margin: auto;
+      width: 100%;
+    }
+  }
+  .Head:hover, 
+  .Left:hover, 
+  .Right:hover, 
+  .Foot:hover, 
+  .Action:hover {
+    color: white;
+    transition: 0.7s all;
+  }
+  .Head {
+    top: -2px;
+    height: 36px;
+    width: calc(100% - 38px);
+    overflow: hidden;
+    img {
+      width: 40px;
+      height: 34px;
+      filter: invert(1);
+    }
+    h5 {
+      margin: 0;
+      height: 36px;
+      align-items: center;
+      color: white;
+      font-size: 28px;
+      border-bottom: 1px solid $alt-border;
+      width: calc(100% - 10px);
+      transition: 0.7s all;
+    }
+    #tricksCont {
+      //border: 1px solid blue;
+      width: 100%;
+      height: calc(260px);
+      display: flex;
+      overflow: scroll;
+      margin: 0px auto 0 auto;
+      transition: 0.7s all;
+      .trick {
+        border: 2px solid lightgreen;
+        border-radius: 4px;
+        min-width: 350px;
+        height: 90%;
+        margin: 10px;
+      }
+    }
+  }
+  .Left {
+    left: -2px;
+    top: 38px;
+    height: calc(100% - 74px);
+    width: 36px;
+    overflow: hidden;
+    #leftCont {
+      //border: 2px solid yellow;
+      width: 100%;
+      height: 100%;
+      h2 {
+        width: 300px;
+        height: 50px;
+        transition: 0.7s all;
+        padding-top: 1px;
+        pointer-events:none;
+        color: white;
+        border-bottom: 1px solid $alt-border;
+        mix-blend-mode: difference;
+      }
+      #leftList {
+        //border: 1px solid blue;
+        height: calc(100% - 55px);
+        width: 98%;
+        margin: auto;
+        transition: 0.7s all;
+        display: flex;
+        flex-wrap: wrap;
+        overflow: scroll;
+        .leftO {
+          border: 2px solid $border-color;
+          height: 100px;
+          width: 100%;
+          border-radius: 4px;
+          margin: 5px auto;
+        }
+      }
+    }
+  }
+  .Right {
+    right: -2px;
+    height: calc(100% - 36px);
+    width: 36px;
+    overflow: hidden;
+    h2 {
+      width: 300px;
+      height: 32px;
+      transition: 0.7s all;
+      padding-top: 1px;
+      margin: 0;
+      pointer-events:none;
+      color: white;
+      border-bottom: 2px solid $alt-border;
+      mix-blend-mode: difference;
+    }
+    #source {
+      border: 1px solid #212121;
+      border-radius: 4px;
+      height: 453px;
+      margin: 0 auto auto auto;
+      width: 90%;
+      display: flex;
+      flex-wrap: wrap;
+      transition: 0.7s all;
+      h4 {
+        border-bottom: 2px solid #212121;
+        width: 100%;
+        font-size: 30px;
+        height: 34px;
+        margin-bottom: 3px;
+      }
+      #method {
+        border: 1px solid white;
+        border-radius: 4px; 
+        display: flex;
+        width: 90%;
+        height: 60px;
+        margin: auto;
+        .methodO {
+          border: 1px solid #212121;
+          border-radius: 4px;
+          width: 30%;
+          height: 50px;
+          margin: auto;
+          img {
+            height: 40px;
+            margin: 5px auto;
+          }
+        }
+        .methodO:hover {
+          border: 1px solid lightgreen;
+        }
+      }
+      #preview {
+        border: 2px solid white;
+        border-radius: 4px;
+        width: 96%;
+        height: 308px;
+        margin: auto;
+        display: flex;
+        overflow: hidden;
+        .viewBox {
+          border: 1px solid white;
+          border-radius: 4px;
+          overflow: hidden;
+          width: 400px;
+          height: 280px;
+          margin: 10px auto;
+          #img-input {
+            border: 2px solid white;
+            margin: 16px auto 8px auto;
+            border-radius: 4px;
+          }
+          #default-img {
+            border: 2px solid red;
+            border-radius: 4px;
+            width: 380px;
+            height: 218px;
+            transition: 0.3s all;
+          }
+          #default-img:hover {
+            border: 5px solid white;
+            transition: 0.3s all;
+          }
+          #local-player {
+            border: 1px solid #212121;
+            border-radius: 4px;
+            margin: 6px auto;
+            overflow: hidden;
+          }
+          iframe {
+            margin: 7px auto 0px auto;
+          }
+          #vid-controls {
+            border: 1px solid white;
+            height: 40px;
+            width: 95%;
+            margin: 0 auto;
+            border-radius: 4px;
+            display: flex;
+            #vid-snap {
+              border: 2px solid lightgreen;
+              margin: auto;
+              width: 90px;
+            }
+            #vid-track {
+              border: 2px solid lightgreen;
+              margin: auto;
+              width: 150px;
+            }
+            #vid-snap:hover,
+            #vid-track:hover
+             {
+              border: 1px dashed blue;
+            }
+          }
+        }
+      }
+    }
+    #img-data {
+      width: 90%;
+      height: calc(100% - 505px);
+      border: 1px solid #212121;
+      border-radius: 4px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      transition: 0.7s all;
+      h2 {
+        width: 100%;
+      }
+      h6 {
+        width: 30%;
+        height: 40px;
+        margin: 0 auto;
+        text-align: left;
+        padding-left: 20px;
+        border: 1px solid #212121;
+        border-radius: 4px; 
+      }
+      #imageBox {
+        width: 90%;
+        margin: 0 auto;
+        height: 100%;
+        margin: 20px auto 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        overflow: scroll;
+        //border: 1px solid red;
+        .snapA {
+          border: 1px dashed red;
+          width: 100%;
+          height: 190px;
+          margin: 3px auto;
+          overflow: hidden;
+          border-radius: 4px;
+          transition: 0.7s all;
+          h4 {
+            border-bottom: 1px solid white;
+            width: 100%;
+            float: right;
+            text-align: left;
+            padding-left: 15px;
+            font-size: 20px;
+            margin-top: 10px;
+            margin-bottom: 6px;
+            pointer-events: none;
+          }
+          .switch {
+            position: absolute;
+            right: 70px;
+            opacity: 1;
+            margin-top: 7px;
+            height: 20px;
+            width: 100px;
+            border-radius: 4px;
+            border: 1px solid white;
+            transition: 0.7s all;
+            background: #212121;
+          }
+          .sampleImg {
+            border: 1px solid #212121;
+            //border-radius: 4px;
+            filter: grayscale(100%);
+            display: flex;
+            flex-wrap: wrap;
+          }
+          .controls {
+           border: 2px solid blue;
+           border-radius: 4px;
+            height: 110px;
+            width: 110px;
+            float: right;
+            margin: -132px 10px 0 0;
+            text-align: center;
+            display: flex; 
+            flex-wrap: wrap;
+            #cont-left {
+              width: 50%;
+              height: 32%;
+            }
+            #cont-right {
+              width: 50%;
+              height: 32%;
+            }
+            #cont-up {
+              height: 32%;
+              width: 100%;
+            }
+            #cont-down {
+              height: 32%;
+              width: 100%;
+            }
+            #cont-up,
+            #cont-left,
+            #cont-right,
+            #cont-down {
+              border: 1px solid blue;
+              display: flex;
+              i {
+                fill: white;
+                color: white;
+                margin: auto;
+                font-size: 20px;
+                pointer-events: none;
+              }
+            }
+            #cont-left:hover,
+            #cont-right:hover,
+            #cont-up:hover,
+            #cont-down:hover {
+              color: lightgreen;
+              transition: 0.2s all;
+            }
+          }
+        }
+        .activeSnap {
+          border: 3px solid green;
+        }
+        .inactiveSnap {
+          border: 1px solid red;
+          height: 50px;
+          .controls {
+            opacity: 0;
+            pointer-events: none;
+          }
+          .sampleImg {
+            display: none;
+            opacity: 0;
+            pointer-events: none;
+          }
+        }
+        #map {
+          width: 130px;
+          height: 130px;
+          overflow: hidden;
+          margin: 10px;
+          margin-top: 3px;
+          .shiftImg {
+            width: 878px;
+            height: 500px;
+          }
+        }
+        #counter {
+          width: 220px;
+          height: 40px;
+          margin: 50px 5px;
+          overflow: hidden;
+          .shiftImg {
+            width: 1600px !important;
+            height: 804px;
+          }
+        }
+        #compass {
+          width: 140px;
+          height: 40px;
+          margin-top: -45px;
+          overflow: hidden;
+          .shiftImg {
+            width: 1400px;
+            height: 804px;
+            margin-left: -630px;
+            margin-top: -22px;
+          }
+        }
+        #weapons {
+          margin: 10px auto;
+          width: 398px;
+          height: 90px;
+          overflow: hidden;
+          .shiftImg {
+            width: 1200px;
+            height: 670px;
+            margin-left: -780px;
+            margin-top: -530px;
+            //opacity: 0.6;
+          }
+        }
+        #health {
+          margin: 110px auto;
+          width: 398px;
+          height: 50px;
+          overflow: hidden;
+          .shiftImg {
+            width: 1400px;
+            height: 804px;
+            margin-left: -500px;
+            margin-top: -665px;
+            //opacity: 0.6;
+          }
+        }
+      }
+    }
+  }
+  .Foot {
+    bottom: -4px;
+    height: 36px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: left;
+    h2 {
+      border-bottom: 1px solid white;
+      width: 90%;
+      height: 34px;
+      margin: 0 auto;
+      pointer-events:none;
+      mix-blend-mode: difference;
+      color: white;
+    }
+  }
+  .Action {
+    left: 39px;
+    top: 38px;
+    width: calc(100% - 76px);
+    height: calc(100% - 74px); 
+    overflow: scroll;  
+    display: flex; 
+    #zoom {
+      border: 2px solid #212121;
+      border-radius: 4px;
+      position: absolute;
+      width: 40px;
+      height: 200px;
+      margin: 5px;
+      color: white;
+      z-index: 100;
+      .zoomI {
+        //border: 1px solid red;
+        width: 30px;
+        height: 30px;
+        font-size: 30px;
+        padding-top: 4px;
+        pointer-events:none;
+      }
+      #zoom-scale {
+        //border: 1px solid blue;
+        height: calc(100% - 90px);
+      }
+      .zommI:hover {
+        color: yellow;
+      }
+    }
+    #compass {
+      width: 90px;
+      height: 90px;
+      border: 2px solid #212121;
+      border-radius: 50%;
+      position: absolute;
+      right: 30px;
+      top: 67px;
+      z-index: 100;
+      //transform: rotate(10deg);
+      #drag {
+        width: 160px;
+        height: 5px;
+        margin-top: -70px;
+        position: absolute;
+        left: -50px;
+        input {
+          border: 5px solid red;
+        }
+      }
+      img {
+        position: absolute;
+        height: 170px;
+        width: 170px;
+        left: -66px;
+        top: -47px;
+        //transform: rotate(12deg);
+        filter: invert(1);
+      }
+    }
+    #zoom:hover,
+    #compass:hover {
+      border-color: red;
+    }
+    #storm {
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      z-index: 3;
+      display: flex;
+      pointer-events: none;
+      display: none;
+      #edge {
+        border: 3px solid blue;
+        width: 1000px;
+        height: 1000px;
+        margin: auto;
+        border-radius: 50%;
+        opacity: 0.6;
+        -webkit-box-shadow: 0px 0px 200px 300px orchid;
+        -moz-box-shadow: 0px 0px 200px 300px orchid;
+        box-shadow: 0px 0px 200px 300px orchid;
+      }
+    }
+    #x-axis,
+    #y-axis {
+      position: absolute;
+      border: 1px dashed blue;
+      display: flex;
+      flex-wrap: wrap;
+      z-index: 10;
+      background: black;
+      opacity: 0.9;
+      .x-axis-context,
+      .y-axis-context {
+        border: 1px solid red;
+        display: flex;
+        flex-wrap: wrap;
+        margin: auto;
+      }
+    }
+    #x-axis {
+      width: 100%;
+      .x-ax {
+        border: 1px solid #212121;
+        border-radius: 4px;
+        width: 9%;
+        margin: auto;
+      }
+    }
+    #y-axis {
+      height: 100%;
+      width: 20px;
+      .y-ax {
+        border: 1px solid #212121;
+        border-radius: 4px;
+        width: 20px;
+        height: 9%;
+        margin: auto;
+        display: flex;
+        text-align: center;
+        p {
+          margin: auto;
+        }
+      }
+    }
+    #mapC {
+      //border: 2px solid white;
+      //margin: auto;
+      border-radius: 4px;
+      //overflow: hidden;
+      // height: 800px;
+      // width: 800px;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      // margin-left: -400px;
+      // margin-top: -400px;
+      transition: height 0.7s, width 0.7s;
+      z-index: 0;
+      #grid {
+        //border-top: 1px solid white;
+        //border-left: 1px solid white;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        background: none;
+        position: absolute;
+        z-index: 13;
+        display: flex;
+        flex-wrap: wrap;
+        opacity: 0.2;
+        .gridBox {
+          //border-bottom: 1px solid white;
+          //border-right: 1px solid white;
+          width: 10%;
+          height: 10%;
+          margin: auto;
+          display: flex;
+          transition: 0.3s all;
+          p {
+            margin: auto;
+          }
+        }
+        .gridBox:hover {
+          opacity: 0.8;
+          border-top: 1px solid white;
+          border-left: 1px solid white;
+          transition: 0.3s all;
+          color: red;
+        }
+      }
+      #location {
+        width: 100%;
+        height: 100%;
+        //border: 1px solid blue;
+        position: absolute;
+        z-index: 100;
+        #pointCanvas {
+          //border: 1px dashed yellow;
+        }
+      }
+      img {
+        height: 100%;
+        width: 100%;
+        margin: auto;
+        transition: 0.7s all;
+      }
+
+    }
+  }
+
+  .Foot #hoverBox-Foot,
+  .Left #hoverBox-Left,
+  .Right #hoverBox-Right {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    transition: 0.7s all;
+    padding: 2px;
+    //border: 1px dashed violet;
+  }
+  .Left #hoverBox-Left,
+  .Right #hoverBox-Right {
+    width: 36px;
+  }
+  .Left #hoverBox-Left {
+    right: 0px;
+  }
+  .Foot #hoverBox-Foot {
+    height: 36px;
+  }
+  .Left #hoverBox-Left:hover {
+    -webkit-box-shadow: inset -10px 0px 20px -5px rgba(0,255,26,0.88); 
+    box-shadow: inset -10px 0px 20px -5px rgba(0,255,26,0.88);
+    transition: 0.7s all;
+  }
+  .Foot #hoverBox-Foot:hover {
+    -webkit-box-shadow: inset 20px -5px -10px 0px rgba(0,255,26,0.88); 
+    box-shadow: inset 0px 10px 20px -5px rgba(0,255,26,0.88);
+    transition: 0.7s all;
+  }
+  .Right #hoverBox-Right:hover {
+    -webkit-box-shadow: inset 10px 0px 20px -5px rgba(0,255,26,0.88); 
+    box-shadow: inset 10px 0px 20px -5px rgba(0,255,26,0.88);
+    transition: 0.7s all;
+  }
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 0px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: none; 
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: lightgreen; 
+  border: 2px solid black;
+  border-radius: 4px;
+  opacity: 0.7;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: white; 
+}

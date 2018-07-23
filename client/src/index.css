@@ -1,0 +1,578 @@
+.App {
+  height: 100%;
+  width: 100%;
+  background: black;
+  overflow: hidden; }
+  .App .Head, .App .Left, .App .Right, .App .Foot, .App .Action {
+    border: 2px solid lightgreen;
+    border-radius: 4px;
+    background: black;
+    position: absolute;
+    color: lightgreen;
+    transition: 0.7s all;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap; }
+    .App .Head h1, .App .Head h2, .App .Left h1, .App .Left h2, .App .Right h1, .App .Right h2, .App .Foot h1, .App .Foot h2, .App .Action h1, .App .Action h2 {
+      margin: auto;
+      width: 100%; }
+  .App .Head:hover,
+  .App .Left:hover,
+  .App .Right:hover,
+  .App .Foot:hover,
+  .App .Action:hover {
+    color: white;
+    transition: 0.7s all; }
+  .App .Head {
+    top: -2px;
+    height: 36px;
+    width: calc(100% - 38px);
+    overflow: hidden; }
+    .App .Head img {
+      width: 40px;
+      height: 34px;
+      filter: invert(1); }
+    .App .Head h5 {
+      margin: 0;
+      height: 36px;
+      align-items: center;
+      color: white;
+      font-size: 28px;
+      border-bottom: 1px solid #212121;
+      width: calc(100% - 10px);
+      transition: 0.7s all; }
+    .App .Head #tricksCont {
+      width: 100%;
+      height: calc(260px);
+      display: flex;
+      overflow: scroll;
+      margin: 0px auto 0 auto;
+      transition: 0.7s all; }
+      .App .Head #tricksCont .trick {
+        border: 2px solid lightgreen;
+        border-radius: 4px;
+        min-width: 350px;
+        height: 90%;
+        margin: 10px; }
+  .App .Left {
+    left: -2px;
+    top: 38px;
+    height: calc(100% - 74px);
+    width: 36px;
+    overflow: hidden; }
+    .App .Left #leftCont {
+      width: 100%;
+      height: 100%; }
+      .App .Left #leftCont h2 {
+        width: 300px;
+        height: 50px;
+        transition: 0.7s all;
+        padding-top: 1px;
+        pointer-events: none;
+        color: white;
+        border-bottom: 1px solid #212121;
+        mix-blend-mode: difference; }
+      .App .Left #leftCont #leftList {
+        height: calc(100% - 55px);
+        width: 98%;
+        margin: auto;
+        transition: 0.7s all;
+        display: flex;
+        flex-wrap: wrap;
+        overflow: scroll; }
+        .App .Left #leftCont #leftList .leftO {
+          border: 2px solid lightgreen;
+          height: 100px;
+          width: 100%;
+          border-radius: 4px;
+          margin: 5px auto; }
+  .App .Right {
+    right: -2px;
+    height: calc(100% - 36px);
+    width: 36px;
+    overflow: hidden; }
+    .App .Right h2 {
+      width: 300px;
+      height: 32px;
+      transition: 0.7s all;
+      padding-top: 1px;
+      margin: 0;
+      pointer-events: none;
+      color: white;
+      border-bottom: 2px solid #212121;
+      mix-blend-mode: difference; }
+    .App .Right #source {
+      border: 1px solid #212121;
+      border-radius: 4px;
+      height: 453px;
+      margin: 0 auto auto auto;
+      width: 90%;
+      display: flex;
+      flex-wrap: wrap;
+      transition: 0.7s all; }
+      .App .Right #source h4 {
+        border-bottom: 2px solid #212121;
+        width: 100%;
+        font-size: 30px;
+        height: 34px;
+        margin-bottom: 3px; }
+      .App .Right #source #method {
+        border: 1px solid white;
+        border-radius: 4px;
+        display: flex;
+        width: 90%;
+        height: 60px;
+        margin: auto; }
+        .App .Right #source #method .methodO {
+          border: 1px solid #212121;
+          border-radius: 4px;
+          width: 30%;
+          height: 50px;
+          margin: auto; }
+          .App .Right #source #method .methodO img {
+            height: 40px;
+            margin: 5px auto; }
+        .App .Right #source #method .methodO:hover {
+          border: 1px solid lightgreen; }
+      .App .Right #source #preview {
+        border: 2px solid white;
+        border-radius: 4px;
+        width: 96%;
+        height: 308px;
+        margin: auto;
+        display: flex;
+        overflow: hidden; }
+        .App .Right #source #preview .viewBox {
+          border: 1px solid white;
+          border-radius: 4px;
+          overflow: hidden;
+          width: 400px;
+          height: 280px;
+          margin: 10px auto; }
+          .App .Right #source #preview .viewBox #img-input {
+            border: 2px solid white;
+            margin: 16px auto 8px auto;
+            border-radius: 4px; }
+          .App .Right #source #preview .viewBox #default-img {
+            border: 2px solid red;
+            border-radius: 4px;
+            width: 380px;
+            height: 218px;
+            transition: 0.3s all; }
+          .App .Right #source #preview .viewBox #default-img:hover {
+            border: 5px solid white;
+            transition: 0.3s all; }
+          .App .Right #source #preview .viewBox #local-player {
+            border: 1px solid #212121;
+            border-radius: 4px;
+            margin: 6px auto;
+            overflow: hidden; }
+          .App .Right #source #preview .viewBox iframe {
+            margin: 7px auto 0px auto; }
+          .App .Right #source #preview .viewBox #vid-controls {
+            border: 1px solid white;
+            height: 40px;
+            width: 95%;
+            margin: 0 auto;
+            border-radius: 4px;
+            display: flex; }
+            .App .Right #source #preview .viewBox #vid-controls #vid-snap {
+              border: 2px solid lightgreen;
+              margin: auto;
+              width: 90px; }
+            .App .Right #source #preview .viewBox #vid-controls #vid-track {
+              border: 2px solid lightgreen;
+              margin: auto;
+              width: 150px; }
+            .App .Right #source #preview .viewBox #vid-controls #vid-snap:hover,
+            .App .Right #source #preview .viewBox #vid-controls #vid-track:hover {
+              border: 1px dashed blue; }
+    .App .Right #img-data {
+      width: 90%;
+      height: calc(100% - 505px);
+      border: 1px solid #212121;
+      border-radius: 4px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      transition: 0.7s all; }
+      .App .Right #img-data h2 {
+        width: 100%; }
+      .App .Right #img-data h6 {
+        width: 30%;
+        height: 40px;
+        margin: 0 auto;
+        text-align: left;
+        padding-left: 20px;
+        border: 1px solid #212121;
+        border-radius: 4px; }
+      .App .Right #img-data #imageBox {
+        width: 90%;
+        margin: 0 auto;
+        height: 100%;
+        margin: 20px auto 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        overflow: scroll; }
+        .App .Right #img-data #imageBox .snapA {
+          border: 1px dashed red;
+          width: 100%;
+          height: 190px;
+          margin: 3px auto;
+          overflow: hidden;
+          border-radius: 4px;
+          transition: 0.7s all; }
+          .App .Right #img-data #imageBox .snapA h4 {
+            border-bottom: 1px solid white;
+            width: 100%;
+            float: right;
+            text-align: left;
+            padding-left: 15px;
+            font-size: 20px;
+            margin-top: 10px;
+            margin-bottom: 6px;
+            pointer-events: none; }
+          .App .Right #img-data #imageBox .snapA .switch {
+            position: absolute;
+            right: 70px;
+            opacity: 1;
+            margin-top: 7px;
+            height: 20px;
+            width: 100px;
+            border-radius: 4px;
+            border: 1px solid white;
+            transition: 0.7s all;
+            background: #212121; }
+          .App .Right #img-data #imageBox .snapA .sampleImg {
+            border: 1px solid #212121;
+            filter: grayscale(100%);
+            display: flex;
+            flex-wrap: wrap; }
+          .App .Right #img-data #imageBox .snapA .controls {
+            border: 2px solid blue;
+            border-radius: 4px;
+            height: 110px;
+            width: 110px;
+            float: right;
+            margin: -132px 10px 0 0;
+            text-align: center;
+            display: flex;
+            flex-wrap: wrap; }
+            .App .Right #img-data #imageBox .snapA .controls #cont-left {
+              width: 50%;
+              height: 32%; }
+            .App .Right #img-data #imageBox .snapA .controls #cont-right {
+              width: 50%;
+              height: 32%; }
+            .App .Right #img-data #imageBox .snapA .controls #cont-up {
+              height: 32%;
+              width: 100%; }
+            .App .Right #img-data #imageBox .snapA .controls #cont-down {
+              height: 32%;
+              width: 100%; }
+            .App .Right #img-data #imageBox .snapA .controls #cont-up,
+            .App .Right #img-data #imageBox .snapA .controls #cont-left,
+            .App .Right #img-data #imageBox .snapA .controls #cont-right,
+            .App .Right #img-data #imageBox .snapA .controls #cont-down {
+              border: 1px solid blue;
+              display: flex; }
+              .App .Right #img-data #imageBox .snapA .controls #cont-up i,
+              .App .Right #img-data #imageBox .snapA .controls #cont-left i,
+              .App .Right #img-data #imageBox .snapA .controls #cont-right i,
+              .App .Right #img-data #imageBox .snapA .controls #cont-down i {
+                fill: white;
+                color: white;
+                margin: auto;
+                font-size: 20px;
+                pointer-events: none; }
+            .App .Right #img-data #imageBox .snapA .controls #cont-left:hover,
+            .App .Right #img-data #imageBox .snapA .controls #cont-right:hover,
+            .App .Right #img-data #imageBox .snapA .controls #cont-up:hover,
+            .App .Right #img-data #imageBox .snapA .controls #cont-down:hover {
+              color: lightgreen;
+              transition: 0.2s all; }
+        .App .Right #img-data #imageBox .activeSnap {
+          border: 3px solid green; }
+        .App .Right #img-data #imageBox .inactiveSnap {
+          border: 1px solid red;
+          height: 50px; }
+          .App .Right #img-data #imageBox .inactiveSnap .controls {
+            opacity: 0;
+            pointer-events: none; }
+          .App .Right #img-data #imageBox .inactiveSnap .sampleImg {
+            display: none;
+            opacity: 0;
+            pointer-events: none; }
+        .App .Right #img-data #imageBox #map {
+          width: 130px;
+          height: 130px;
+          overflow: hidden;
+          margin: 10px;
+          margin-top: 3px; }
+          .App .Right #img-data #imageBox #map .shiftImg {
+            width: 878px;
+            height: 500px; }
+        .App .Right #img-data #imageBox #counter {
+          width: 220px;
+          height: 40px;
+          margin: 50px 5px;
+          overflow: hidden; }
+          .App .Right #img-data #imageBox #counter .shiftImg {
+            width: 1600px !important;
+            height: 804px; }
+        .App .Right #img-data #imageBox #compass {
+          width: 140px;
+          height: 40px;
+          margin-top: -45px;
+          overflow: hidden; }
+          .App .Right #img-data #imageBox #compass .shiftImg {
+            width: 1400px;
+            height: 804px;
+            margin-left: -630px;
+            margin-top: -22px; }
+        .App .Right #img-data #imageBox #weapons {
+          margin: 10px auto;
+          width: 398px;
+          height: 90px;
+          overflow: hidden; }
+          .App .Right #img-data #imageBox #weapons .shiftImg {
+            width: 1200px;
+            height: 670px;
+            margin-left: -780px;
+            margin-top: -530px; }
+        .App .Right #img-data #imageBox #health {
+          margin: 110px auto;
+          width: 398px;
+          height: 50px;
+          overflow: hidden; }
+          .App .Right #img-data #imageBox #health .shiftImg {
+            width: 1400px;
+            height: 804px;
+            margin-left: -500px;
+            margin-top: -665px; }
+  .App .Foot {
+    bottom: -4px;
+    height: 36px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: left; }
+    .App .Foot h2 {
+      border-bottom: 1px solid white;
+      width: 90%;
+      height: 34px;
+      margin: 0 auto;
+      pointer-events: none;
+      mix-blend-mode: difference;
+      color: white; }
+  .App .Action {
+    left: 39px;
+    top: 38px;
+    width: calc(100% - 76px);
+    height: calc(100% - 74px);
+    overflow: scroll;
+    display: flex; }
+    .App .Action #zoom {
+      border: 2px solid #212121;
+      border-radius: 4px;
+      position: absolute;
+      width: 40px;
+      height: 200px;
+      margin: 5px;
+      color: white;
+      z-index: 100; }
+      .App .Action #zoom .zoomI {
+        width: 30px;
+        height: 30px;
+        font-size: 30px;
+        padding-top: 4px;
+        pointer-events: none; }
+      .App .Action #zoom #zoom-scale {
+        height: calc(100% - 90px); }
+      .App .Action #zoom .zommI:hover {
+        color: yellow; }
+    .App .Action #compass {
+      width: 90px;
+      height: 90px;
+      border: 2px solid #212121;
+      border-radius: 50%;
+      position: absolute;
+      right: 30px;
+      top: 67px;
+      z-index: 100; }
+      .App .Action #compass #drag {
+        width: 160px;
+        height: 5px;
+        margin-top: -70px;
+        position: absolute;
+        left: -50px; }
+        .App .Action #compass #drag input {
+          border: 5px solid red; }
+      .App .Action #compass img {
+        position: absolute;
+        height: 170px;
+        width: 170px;
+        left: -66px;
+        top: -47px;
+        filter: invert(1); }
+    .App .Action #zoom:hover,
+    .App .Action #compass:hover {
+      border-color: red; }
+    .App .Action #storm {
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      z-index: 3;
+      display: flex;
+      pointer-events: none;
+      display: none; }
+      .App .Action #storm #edge {
+        border: 3px solid blue;
+        width: 1000px;
+        height: 1000px;
+        margin: auto;
+        border-radius: 50%;
+        opacity: 0.6;
+        -webkit-box-shadow: 0px 0px 200px 300px orchid;
+        -moz-box-shadow: 0px 0px 200px 300px orchid;
+        box-shadow: 0px 0px 200px 300px orchid; }
+    .App .Action #x-axis,
+    .App .Action #y-axis {
+      position: absolute;
+      border: 1px dashed blue;
+      display: flex;
+      flex-wrap: wrap;
+      z-index: 10;
+      background: black;
+      opacity: 0.9; }
+      .App .Action #x-axis .x-axis-context,
+      .App .Action #x-axis .y-axis-context,
+      .App .Action #y-axis .x-axis-context,
+      .App .Action #y-axis .y-axis-context {
+        border: 1px solid red;
+        display: flex;
+        flex-wrap: wrap;
+        margin: auto; }
+    .App .Action #x-axis {
+      width: 100%; }
+      .App .Action #x-axis .x-ax {
+        border: 1px solid #212121;
+        border-radius: 4px;
+        width: 9%;
+        margin: auto; }
+    .App .Action #y-axis {
+      height: 100%;
+      width: 20px; }
+      .App .Action #y-axis .y-ax {
+        border: 1px solid #212121;
+        border-radius: 4px;
+        width: 20px;
+        height: 9%;
+        margin: auto;
+        display: flex;
+        text-align: center; }
+        .App .Action #y-axis .y-ax p {
+          margin: auto; }
+    .App .Action #mapC {
+      border-radius: 4px;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transition: height 0.7s, width 0.7s;
+      z-index: 0; }
+      .App .Action #mapC #grid {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        background: none;
+        position: absolute;
+        z-index: 13;
+        display: flex;
+        flex-wrap: wrap;
+        opacity: 0.2; }
+        .App .Action #mapC #grid .gridBox {
+          width: 10%;
+          height: 10%;
+          margin: auto;
+          display: flex;
+          transition: 0.3s all; }
+          .App .Action #mapC #grid .gridBox p {
+            margin: auto; }
+        .App .Action #mapC #grid .gridBox:hover {
+          opacity: 0.8;
+          border-top: 1px solid white;
+          border-left: 1px solid white;
+          transition: 0.3s all;
+          color: red; }
+      .App .Action #mapC #location {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: 100; }
+      .App .Action #mapC img {
+        height: 100%;
+        width: 100%;
+        margin: auto;
+        transition: 0.7s all; }
+  .App .Foot #hoverBox-Foot,
+  .App .Left #hoverBox-Left,
+  .App .Right #hoverBox-Right {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    transition: 0.7s all;
+    padding: 2px; }
+  .App .Left #hoverBox-Left,
+  .App .Right #hoverBox-Right {
+    width: 36px; }
+  .App .Left #hoverBox-Left {
+    right: 0px; }
+  .App .Foot #hoverBox-Foot {
+    height: 36px; }
+  .App .Left #hoverBox-Left:hover {
+    -webkit-box-shadow: inset -10px 0px 20px -5px rgba(0, 255, 26, 0.88);
+    box-shadow: inset -10px 0px 20px -5px rgba(0, 255, 26, 0.88);
+    transition: 0.7s all; }
+  .App .Foot #hoverBox-Foot:hover {
+    -webkit-box-shadow: inset 20px -5px -10px 0px rgba(0, 255, 26, 0.88);
+    box-shadow: inset 0px 10px 20px -5px rgba(0, 255, 26, 0.88);
+    transition: 0.7s all; }
+  .App .Right #hoverBox-Right:hover {
+    -webkit-box-shadow: inset 10px 0px 20px -5px rgba(0, 255, 26, 0.88);
+    box-shadow: inset 10px 0px 20px -5px rgba(0, 255, 26, 0.88);
+    transition: 0.7s all; }
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(360deg); } }
+
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 0px; }
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: none; }
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: lightgreen;
+  border: 2px solid black;
+  border-radius: 4px;
+  opacity: 0.7; }
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: white; }
+
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: sans-serif;
+  background: black !important;
+  overflow: hidden; }
